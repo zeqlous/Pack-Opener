@@ -3,7 +3,6 @@ import { DROP_RATES, PITY_LIMITS } from './config.js';
 function rollItemRarity() {
     const roll = Math.random() * 100;
 
-    // Check individual item thresholds based on our calculated pool boundaries
     if (roll < DROP_RATES.LEGENDARY_PER_ITEM) {
         return 'legendary';
     } else if (roll < (DROP_RATES.LEGENDARY_PER_ITEM + DROP_RATES.EPIC_PER_ITEM)) {
@@ -22,7 +21,7 @@ export function generatePackResults(gameState) {
         return { isHeirloom: true, items: ['heirloom', 'heirloom', 'heirloom'] };
     }
 
-    // 2. Evaluate Legendary Pity (Guaranteed 1 if 29 packs yielded zero Legendaries)
+    // 2. Evaluate Legendary Pity
     let forceLegendary = gameState.packsSinceLastLegendary >= PITY_LIMITS.LEGENDARY_PITY;
     let packItems = [];
 
@@ -34,10 +33,9 @@ export function generatePackResults(gameState) {
         packItems[0] = 'legendary';
     }
 
-    // 3. Enforce Mandatory Rare Guarantee (100% chance at least one item is Rare or better)
+    // 3. Enforce Mandatory Rare Guarantee fallback rules
     const hasRareOrBetter = packItems.some(tier => tier !== 'common');
     if (!hasRareOrBetter) {
-        // Replace the final slot to guarantee the pack rules are met
         packItems[2] = 'rare';
     }
 

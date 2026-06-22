@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Pack Simulator</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+    <div class="settings-toolbar">
+        <button id="toggle-anim-btn" title="Toggle Animations" class="tool-btn">
+            <img id="anim-icon" src="assets/images/On.png" alt="Animations Toggle">
+        </button>
+        <button id="toggle-sound-btn" title="Toggle Audio" class="tool-btn">
+            <img id="sound-icon" src="assets/images/Sound_On.png" alt="Audio Toggle">
+        </button>
+    </div>
+
+    <nav id="sidebar" class="sidebar collapsed">
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">☰</button>
+        <div class="sidebar-content">
+            <h3>Pack Modes</h3>
+            <ul>
+                <li class="active">Core Rare Pack</li>
+                <li class="locked">Event Packs (Coming Soon)</li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="game-container">
         <h1>Apex Pack Opener</h1>
@@ -32,19 +53,23 @@
             <div class="counter-box legendary-text">Legendaries: <span id="count-legendary">0</span></div>
         </div>
 
-        <div class="pack-stage">
-            <div class="card" id="card-1"></div>
-            <div class="card" id="card-2"></div>
-            <div class="card" id="card-3"></div>
+        <div class="pack-stage" id="pack-stage">
+            <div class="card-slot-window">
+                <div class="card-strip" id="strip-1"></div>
+            </div>
+            <div class="card-slot-window">
+                <div class="card-strip" id="strip-2"></div>
+            </div>
+            <div class="card-slot-window">
+                <div class="card-strip" id="strip-3"></div>
+            </div>
         </div>
 
         <button id="open-btn">Open Apex Pack</button>
     </div>
 
-    <!-- Hidden Confirmation Modal for Heirlooms -->
     <div id="heirloom-modal" class="modal-overlay hidden">
         <div class="modal-content">
-            <div class="heirloom-glow-effect"></div>
             <h2 class="heirloom-text animate-pulse">HEIRLOOM SHARDS EARNED!</h2>
             <hr class="modal-divider">
             <p>Packs it took to find this one: <strong id="modal-packs">0</strong></p>
@@ -52,6 +77,15 @@
             <button id="modal-close-btn">Claim Shards & Continue</button>
         </div>
     </div>
+
+    <footer class="social-links">
+        <span class="discord-tag">Discord: @zeqlous</span>
+        <a href="https://github.com/zeqlous" target="_blank" title="GitHub Repo" class="social-icon github">
+            <img src="assets/images/git.png" alt="GitHub Logo" class="git-logo">
+        </a>
+    </footer>
+
+    <div id="confetti-container" class="hidden-pointer"></div>
 
     <script type="module" src="assets/js/script.js"></script>
 </body>
