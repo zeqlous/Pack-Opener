@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Pack Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Apex Pack Opener</h1>
+        
+        <div class="main-stats">
+            Total Packs Opened: <span id="total-packs">0</span> | 
+            Heirlooms: <span id="heirloom-count">0</span>
+            <br>
+            <div class="money-tracker-container">
+                Total Cash Burned: 
+                <span id="total-money-main" class="money-text font-bold blurred"> $0.00 USD</span>
+                <label class="toggle-blur-btn">
+                    <input type="checkbox" id="blur-toggle" checked>
+                    <span class="toggle-text">Toggle Debt to EA</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Comprehensive Item Counter Grid -->
+        <div class="counter-grid">
+            <div class="counter-box common-text">Commons: <span id="count-common">0</span></div>
+            <div class="counter-box rare-text">Rares: <span id="count-rare">0</span></div>
+            <div class="counter-box epic-text">Epics: <span id="count-epic">0</span></div>
+            <div class="counter-box legendary-text">Legendaries: <span id="count-legendary">0</span></div>
+        </div>
+
+        <div class="pack-stage">
+            <div class="card" id="card-1"></div>
+            <div class="card" id="card-2"></div>
+            <div class="card" id="card-3"></div>
+        </div>
+
+        <button id="open-btn">Open Apex Pack</button>
+    </div>
+
+    <!-- Hidden Confirmation Modal for Heirlooms -->
+    <div id="heirloom-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="heirloom-glow-effect"></div>
+            <h2 class="heirloom-text animate-pulse">HEIRLOOM SHARDS EARNED!</h2>
+            <hr class="modal-divider">
+            <p>Packs it took to find this one: <strong id="modal-packs">0</strong></p>
+            <p>Estimated IRL cash spent: <strong class="money-text">$<span id="modal-money">0.00</span> USD</strong></p>
+            <button id="modal-close-btn">Claim Shards & Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
