@@ -1,0 +1,183 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #da292a;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.main-stats {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #b3b3b3;
+}
+
+.money-tracker-container {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#total-money-main {
+    transition: filter 0.2s ease-in-out;
+}
+
+.blurred {
+    filter: blur(6px);
+}
+
+.toggle-blur-btn {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.toggle-blur-btn:hover {
+    background-color: #3a3a3a;
+    border-color: #da292a;
+}
+
+.toggle-blur-btn input {
+    display: none;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.counter-box {
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid #2a2a2a;
+}
+
+.common-text { color: #aaaaaa; }
+.rare-text { color: #2a75d3; }
+.epic-text { color: #8a2be2; }
+.legendary-text { color: #ffd700; }
+.heirloom-text { color: #da292a; }
+
+.pack-stage {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    height: 180px;
+}
+
+.card {
+    width: 110px;
+    height: 170px;
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.card.reveal {
+    animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.common { background-color: #7a7a7a; box-shadow: 0 0 15px #ffffff33; border-color: #aaaaaa; }
+.rare { background-color: #1c4a85; box-shadow: 0 0 20px #2a75d3cc; border-color: #2a75d3; }
+.epic { background-color: #531b8a; box-shadow: 0 0 25px #8a2be2cc; border-color: #8a2be2; }
+.legendary { background: linear-gradient(135deg, #b8860b, #ffd700); box-shadow: 0 0 30px #ffd700cc; border-color: #ffd700; }
+.heirloom { background: linear-gradient(135deg, #990000, #da292a); box-shadow: 0 0 40px #da292acc; border-color: #da292a; }
+
+button {
+    background-color: #da292a;
+    color: white;
+    border: none;
+    padding: 15px 45px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.2s;
+}
+
+button:hover { background-color: #ff3334; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-overlay.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+.modal-content {
+    background-color: #161616;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid #da292a;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(218, 41, 42, 0.4);
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #da292a, transparent);
+    margin: 20px 0;
+}
+
+.money-text { color: #2ecc71; font-size: 1.3rem; }
+.animate-pulse { animation: pulse 1.5s infinite; }
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.04); opacity: 1; text-shadow: 0 0 20px #da292a; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
