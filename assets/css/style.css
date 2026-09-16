@@ -152,11 +152,11 @@ h1 {
 /* Individual node container box inside the vertical tracks */
 .slot-node {
     width: 100%;
-    height: 150px; /* Must perfectly equal the window viewport height box */
+    height: 150px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center; /* Forces the internal SVG image into the absolute middle */
+    align-items: center;
     flex-shrink: 0;
 }
 
@@ -183,7 +183,7 @@ h1 {
 
 @keyframes spinTrackDown {
     0% { transform: translateY(0); }
-    100% { transform: translateY(calc(100% - 150px)); } /* Adjusted to match your precise 150px window height */
+    100% { transform: translateY(calc(100% - 150px)); } /* Adjusted to match 150px window height */
 }
 
 button#open-btn {
@@ -223,7 +223,7 @@ button#modal-close-btn {
     letter-spacing: 0.5px;
     margin-top: 15px;
     transition: background 0.2s, transform 0.1s;
-    width: 100%; /* Spans full width of the modal contents cleanly */
+    width: 100%;
 }
 
 button#modal-close-btn:hover {
@@ -372,7 +372,7 @@ button:disabled {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
     pointer-events: none;
-    z-index: 1; /* Sits beneath all typography panels */
+    z-index: 1;
 }
 .hidden-pointer { pointer-events: none; }
 

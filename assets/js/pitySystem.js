@@ -2,7 +2,6 @@ import { DROP_RATES, PITY_LIMITS } from './config.js';
 
 function rollItemRarity() {
     const roll = Math.random() * 100;
-
     if (roll < DROP_RATES.LEGENDARY_PER_ITEM) {
         return 'legendary';
     } else if (roll < (DROP_RATES.LEGENDARY_PER_ITEM + DROP_RATES.EPIC_PER_ITEM)) {

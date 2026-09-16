@@ -35,24 +35,25 @@ export const SETTINGS = {
 };
 
 const ICON_MAP = {
-    animOn: 'assets/images/On.png',
-    animOff: 'assets/images/Off.png',
-    soundOn: 'assets/images/Sound_On.png',
-    soundOff: 'assets/images/Volume-Off.png'
+    animOn: 'assets/images/Animation_On.png',
+    animOff: 'assets/images/Animation_Off.png',
+    soundOn: 'assets/images/Sound_Enable.png',
+    soundOff: 'assets/images/Sound_Disable.png'
 };
 
 const SVG_MAP = {
-    common: 'assets/images/Crafting_Metals.svg',
-    rare: 'assets/images/Crafting_Metals.svg',
-    epic: 'assets/images/Crafting_Metals_Epic.svg',
-    legendary: 'assets/images/Crafting_Metals_Legendary.svg',
-    heirloom: 'assets/images/Heirloom_Shards.svg'
+    common: 'assets/images/Metals_Common.svg',
+    rare: 'assets/images/Metals_Common.svg',
+    epic: 'assets/images/Metals_Epic.svg',
+    legendary: 'assets/images/Metals_Legendary.svg',
+    heirloom: 'assets/images/Metals_Shards.svg'
 };
 
+// no audio implemented yet
 const AUDIO = {
-    roll: new Audio('assets/audio/roll.mp3'),
-    dink: new Audio('assets/audio/dink.mp3'),
-    heirloom: new Audio('assets/audio/heirloom.mp3')
+    roll: new Audio(''),
+    dink: new Audio(''),
+    heirloom: new Audio('')
 };
 
 const animIcon = document.getElementById('anim-icon');

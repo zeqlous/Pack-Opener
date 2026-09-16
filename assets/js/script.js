@@ -9,6 +9,7 @@ const state = {
     itemCounters: { common: 0, rare: 0, epic: 0, legendary: 0, heirloom: 0 }
 };
 
+// set how rarities are initialized before being calculated
 const RARITY_WEIGHTS = { common: 1, rare: 2, epic: 3, legendary: 4, heirloom: 5 };
 
 function getHighestRarityInPack(items) {
