@@ -1,19 +1,24 @@
-# Pack-Opener ───★
+# Pack-Opener — Weighted Drop Engine
 
-A responsive, browser-based loot pack simulation engine built to mimic randomized item drops and rarity distributions using core JavaScript logic.
+A browser-based simulation engine that models randomized item drops and rarity-weighted probability distributions, built with vanilla JavaScript.
 
-Live Demo: https://zeqlous.github.io/Pack-Opener/
+**Live demo:** https://zeqlous.github.io/Pack-Opener/
 
-─── [ FEATURES ] ───
-* Probability Engine :: Simulates weighted drop rates across multiple item rarities.
-* Responsive Layout :: Optimized UI scaling for desktop and mobile viewports.
-* State Management :: Tracks opened packs and inventory states in real time.
+## Features
 
-─── [ TECH STACK ] ───
-* Frontend :: HTML5 // CSS3 // JavaScript (ES6+)
-* Deployment :: GitHub Pages
+- **Probability engine** — simulates weighted drop rates across multiple item rarity tiers.
+- **Responsive layout** — UI scales across desktop and mobile viewports.
+- **State management** — tracks opened packs and inventory state in real time.
 
-─── [ LOCAL SETUP ] ───
-1. Clone the repository:
-   git clone https://github.com/zeqlous/Pack-Opener.git
-2. Open index.html in your web browser.
+## Tech Stack
+
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+- **Deployment:** GitHub Pages
+
+## Local Setup
+
+```bash
+git clone https://github.com/zeqlous/Pack-Opener.git
+```
+
+Open `index.html` in your browser.
